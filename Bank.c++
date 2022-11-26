@@ -130,3 +130,25 @@ void Bank::update ()
 	}
     }
 }
+
+void Bank::search ()
+{
+  cout << "Enter Id of Customer" << endl;
+  cin >> id;
+  for (int i = 0; i < total; i++)
+    {
+      if (id == person[i].ID)
+	{
+	  cout << "Name: " << person[i].name << endl;
+	  cout << "ID: " << person[i].ID << endl;
+	  cout << "Address: " << person[i].address << endl;
+	  cout << "Contact: " << person[i].contact << endl;
+	  cout << "Cash: " << person[i].cash << endl;
+	  break;
+	}
+      if (i == total - 1)
+	{
+	  cout << "No such record found" << endl;
+	}
+    }
+}
