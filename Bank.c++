@@ -69,3 +69,18 @@ void Bank::choice ()
     }
 }
 
+void Bank::perData ()
+{
+  cout << "Enter data of person" << total + 1 << endl;
+  cout << "Enter Name" << endl;
+  cin >> person[total].name;
+  cout << "Enter ID" << endl;
+  cin >> person[total].ID;
+  cout << "Enter Address" << endl;
+  cin >> person[total].address;
+  cout << "Enter Contact Number" << endl;
+  cin >> person[total].contact;
+  cout << "Total Cash" << endl;
+  cin >> person[total].cash;
+  total++;
+}
