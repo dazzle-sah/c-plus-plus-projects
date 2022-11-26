@@ -84,3 +84,15 @@ void Bank::perData ()
   cin >> person[total].cash;
   total++;
 }
+void Bank::show ()
+{
+  for (int i = 0; i < total; i++)
+    {
+      cout << "Data of person" << i + 1 << endl;
+      cout << "Name: " << person[i].name << endl;
+      cout << "ID: " << person[i].ID << endl;
+      cout << "Address: " << person[i].address << endl;
+      cout << "Contact: " << person[i].contact << endl;
+      cout << "Cash: " << person[i].cash << endl;
+    }
+}
