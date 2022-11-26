@@ -96,3 +96,37 @@ void Bank::show ()
       cout << "Cash: " << person[i].cash << endl;
     }
 }
+void Bank::update ()
+{
+  cout << "Enter Id of Customer" << endl;
+  cin >> id;
+  for (int i = 0; i < total; i++)
+    {
+      if (id == person[i].ID)
+	{
+	  cout << "Previous data" << endl;
+	  cout << "Data of person" << i + 1 << endl;
+	  cout << "Name: " << person[i].name << endl;
+	  cout << "ID: " << person[i].ID << endl;
+	  cout << "Address: " << person[i].address << endl;
+	  cout << "Contact: " << person[i].contact << endl;
+	  cout << "Cash: " << person[i].cash << endl;
+	  cout << "Enter New Data : " << endl;
+	  cout << "Enter Name" << endl;
+	  cin >> person[i].name;
+	  cout << "Enter ID" << endl;
+	  cin >> person[i].ID;
+	  cout << "Enter Address" << endl;
+	  cin >> person[i].address;
+	  cout << "Enter Contact Number" << endl;
+	  cin >> person[i].contact;
+	  cout << "Total Cash" << endl;
+	  cin >> person[i].cash;
+	  break;
+	}
+      if (i == total - 1)
+	{
+	  cout << "No such record found" << endl;
+	}
+    }
+}
