@@ -17,4 +17,19 @@ public:
   {
     total = 0;
   }
+    void choice ();
+  void perData ();
+  void show ();
+  void update ();
+  void search ();
+  void transactions ();
+  void del ();
 };
+int
+main ()
+{
+  Bank b;
+  b.choice ();
+
+  return 0;
+}
