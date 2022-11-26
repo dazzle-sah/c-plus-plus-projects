@@ -203,3 +203,43 @@ void Bank::transactions ()
 	}
     }
 }
+void Bank::del ()
+{
+  char ch;
+  cout << "Press 1 to remove specific record" << endl;
+  cout << "Press 2 to remove full record" << endl;
+  ch = getch ();
+  switch (ch)
+    {
+    case '1':
+      cout << "enter id of customer:" << endl;
+      cin >> id;
+      for (int i = 0; i < total; i++)
+	{
+	  if (id == person[i].ID)
+	    {
+	      for (int j = i; j < total; j++)
+		{
+		  person[j].name = person[i + 1].name;
+		  person[j].ID = person[i + 1].ID;
+		  person[j].address = person[i + 1].address;
+		  person[j].contact = person[i + 1].contact;
+		  person[j].cash = person[i + 1].cash;
+		  total--;
+		  break;
+		}
+	    }
+	  if (i == total - 1)
+	    {
+	      cout << "No such record found" << endl;
+	    }
+	}
+      break;
+    case '2':
+      total = 0;
+      cout << "All records are deleted" << endl;
+      break;
+    default:
+      cout << "Invalid Input" << endl;
+    }
+}
