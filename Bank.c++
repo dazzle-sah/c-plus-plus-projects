@@ -152,3 +152,54 @@ void Bank::search ()
 	}
     }
 }
+void Bank::transactions ()
+{
+  int cash;
+  char ch;
+  cout << "Enter Id of Customer" << endl;
+  cin >> id;
+  for (int i = 0; i < total; i++)
+    {
+      if (id == person[i].ID)
+	{
+	  cout << "Name: " << person[i].name << endl;
+	  cout << "Address: " << person[i].address << endl;
+	  cout << "Contact: " << person[i].contact << endl;
+	  cout << "\nExisting Cash " << person[i].cash << endl;
+	  cout << "Press 1 to deposit" << endl;
+	  cout << "Press 2 to witdraw" << endl;
+	  ch = getch ();
+
+	  switch (ch)
+	    {
+	    case '1':
+	      cout << "How much cash you want to deposit>" << endl;
+	      cin >> cash;
+	      person[i].cash = +cash;
+	      cout << "Your new cash is" << person[i].cash << endl;
+	      break;
+	    case '2':
+	      cout << "How much cash you want to withdraw>" << endl;
+	      cin >> cash;
+	      if (cash > person[i].cash)
+		{
+		  cout << "Your existing cash is just" << person[i].cash <<
+		    endl;
+		  sleep (3000);
+		  goto back;
+		}
+	      person[i].cash -= cash;
+	      cout << "Your new cash is" << person[i].cash << endl;
+	      break;
+	    default:
+	      cout << "Invalid Input" << endl;
+	      break;
+	    }
+	  break;
+	}
+      if (i == total - 1)
+	{
+	  cout << "No such record found" << endl;
+	}
+    }
+}
